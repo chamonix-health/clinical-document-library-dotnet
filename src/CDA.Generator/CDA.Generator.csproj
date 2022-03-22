@@ -23,8 +23,8 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CDA.GeneratedCode\CDA.GeneratedCode.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\CDA.Generator.Common\CDA.Generator.Common.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\CDA.GeneratedCode\CDA.GeneratedCode.csproj" PrivateAssets="none" />
+    <ProjectReference Include="..\CDA.Generator.Common\CDA.Generator.Common.csproj" PrivateAssets="none" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
@@ -43,7 +43,7 @@
   </PropertyGroup>
   <Target Name="CopyProjectReferencesToPackage">
     <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'all'))" />
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'none'))" />
     </ItemGroup>
   </Target>
 </Project>
